@@ -1,0 +1,1066 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\Costura.Fody.5.7.0\build\Costura.Fody.props" Condition="Exists('..\packages\Costura.Fody.5.7.0\build\Costura.Fody.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{73894C56-55E4-4EBE-8EB1-39DD1FE7D074}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>Design_Highlands</RootNamespace>
+    <AssemblyName>Design_Highlands</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <TargetZone>Internet</TargetZone>
+  </PropertyGroup>
+  <PropertyGroup>
+    <GenerateManifests>false</GenerateManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationManifest>Properties\app.manifest</ApplicationManifest>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AWSSDK.Core, Version=3.3.0.0, Culture=neutral, PublicKeyToken=885c28607f98e604, processorArchitecture=MSIL">
+      <HintPath>..\packages\AWSSDK.Core.3.7.100.14\lib\net45\AWSSDK.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="AWSSDK.SecurityToken, Version=3.3.0.0, Culture=neutral, PublicKeyToken=885c28607f98e604, processorArchitecture=MSIL">
+      <HintPath>..\packages\AWSSDK.SecurityToken.3.7.100.14\lib\net45\AWSSDK.SecurityToken.dll</HintPath>
+    </Reference>
+    <Reference Include="Bunifu.Licensing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=f89b4760ba7dcb6b, processorArchitecture=MSIL">
+      <HintPath>..\packages\Bunifu.Licensing.5.0.0\lib\net40\Bunifu.Licensing.dll</HintPath>
+    </Reference>
+    <Reference Include="Bunifu.UI.WinForms, Version=0.0.0.0, Culture=neutral, PublicKeyToken=e8e24ccd28363fe9, processorArchitecture=MSIL">
+      <HintPath>..\packages\Bunifu.UI.WinForms.6.0.2\lib\net40\Bunifu.UI.WinForms.dll</HintPath>
+    </Reference>
+    <Reference Include="Bunifu.UI.WinForms.1.5.3, Version=1.5.3.0, Culture=neutral, PublicKeyToken=e8e24ccd28363fe9, processorArchitecture=MSIL">
+      <HintPath>..\packages\Bunifu.UI.WinForms.1.5.3.1.0.0\lib\net40\Bunifu.UI.WinForms.1.5.3.dll</HintPath>
+    </Reference>
+    <Reference Include="Bunifu.UI.WinForms.BunifuCircleProgress">
+      <HintPath>..\packages\BunifuCrack\Bunifu.UI.WinForms.BunifuCircleProgress.dll</HintPath>
+    </Reference>
+    <Reference Include="Bunifu.UI.WinForms.BunifuDataGridView">
+      <HintPath>..\packages\BunifuCrack\Bunifu.UI.WinForms.BunifuDataGridView.dll</HintPath>
+    </Reference>
+    <Reference Include="Bunifu.UI.WinForms.BunifuDatePicker">
+      <HintPath>..\packages\BunifuCrack\Bunifu.UI.WinForms.BunifuDatePicker.dll</HintPath>
+    </Reference>
+    <Reference Include="Bunifu.UI.WinForms.BunifuSlider">
+      <HintPath>..\packages\BunifuCrack\Bunifu.UI.WinForms.BunifuSlider.dll</HintPath>
+    </Reference>
+    <Reference Include="CloudinaryDotNet, Version=1.20.0.0, Culture=neutral, PublicKeyToken=c8234dc617ae7841, processorArchitecture=MSIL">
+      <HintPath>..\packages\CloudinaryDotNet.1.20.0\lib\net452\CloudinaryDotNet.dll</HintPath>
+    </Reference>
+    <Reference Include="ComponentFactory.Krypton.Docking">
+      <HintPath>D:\MY WORKSPACE\FILES\STUDY\CNPM\N1\Source Code\src(bc)\Krypton-master\Krypton-master\Bin\ComponentFactory.Krypton.Docking.dll</HintPath>
+    </Reference>
+    <Reference Include="ComponentFactory.Krypton.Navigator">
+      <HintPath>D:\MY WORKSPACE\FILES\STUDY\CNPM\N1\Source Code\src(bc)\Krypton-master\Krypton-master\Bin\ComponentFactory.Krypton.Navigator.dll</HintPath>
+    </Reference>
+    <Reference Include="ComponentFactory.Krypton.Ribbon">
+      <HintPath>D:\MY WORKSPACE\FILES\STUDY\CNPM\N1\Source Code\src(bc)\Krypton-master\Krypton-master\Bin\ComponentFactory.Krypton.Ribbon.dll</HintPath>
+    </Reference>
+    <Reference Include="ComponentFactory.Krypton.Toolkit">
+      <HintPath>D:\MY WORKSPACE\FILES\STUDY\CNPM\N1\Source Code\src(bc)\Krypton-master\Krypton-master\Bin\ComponentFactory.Krypton.Toolkit.dll</HintPath>
+    </Reference>
+    <Reference Include="ComponentFactory.Krypton.Workspace">
+      <HintPath>D:\MY WORKSPACE\FILES\STUDY\CNPM\N1\Source Code\src\Krypton-master\Krypton-master\Bin\ComponentFactory.Krypton.Workspace.dll</HintPath>
+    </Reference>
+    <Reference Include="Costura, Version=5.7.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Costura.Fody.5.7.0\lib\netstandard1.0\Costura.dll</HintPath>
+    </Reference>
+    <Reference Include="DnsClient, Version=1.6.1.0, Culture=neutral, PublicKeyToken=4574bb5573c51424, processorArchitecture=MSIL">
+      <HintPath>..\packages\DnsClient.1.6.1\lib\net471\DnsClient.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Bcl.AsyncInterfaces, Version=5.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Bcl.AsyncInterfaces.5.0.0\lib\net461\Microsoft.Bcl.AsyncInterfaces.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Logging.Abstractions, Version=2.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.Logging.Abstractions.2.0.0\lib\netstandard2.0\Microsoft.Extensions.Logging.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Win32.Primitives, Version=4.0.2.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Win32.Primitives.4.3.0\lib\net46\Microsoft.Win32.Primitives.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Win32.Registry, Version=5.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Win32.Registry.5.0.0\lib\net461\Microsoft.Win32.Registry.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Win32.Registry.AccessControl, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Win32.Registry.AccessControl.6.0.0\lib\net461\Microsoft.Win32.Registry.AccessControl.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Win32.SystemEvents, Version=6.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Win32.SystemEvents.6.0.0\lib\net461\Microsoft.Win32.SystemEvents.dll</HintPath>
+    </Reference>
+    <Reference Include="MongoDB.Bson, Version=2.19.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\MongoDB.Bson.2.19.0\lib\net472\MongoDB.Bson.dll</HintPath>
+    </Reference>
+    <Reference Include="MongoDB.Driver, Version=2.19.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\MongoDB.Driver.2.19.0\lib\net472\MongoDB.Driver.dll</HintPath>
+    </Reference>
+    <Reference Include="MongoDB.Driver.Core, Version=2.19.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\MongoDB.Driver.Core.2.19.0\lib\net472\MongoDB.Driver.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="MongoDB.Libmongocrypt, Version=1.7.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\MongoDB.Libmongocrypt.1.7.0\lib\net472\MongoDB.Libmongocrypt.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.13.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="RestSharp, Version=100.0.0.0, Culture=neutral, PublicKeyToken=598062e77f915f75, processorArchitecture=MSIL">
+      <HintPath>..\packages\RestSharpSigned.105.2.3\lib\net46\RestSharp.dll</HintPath>
+    </Reference>
+    <Reference Include="SharpCompress, Version=0.30.1.0, Culture=neutral, PublicKeyToken=afb0a02973931d96, processorArchitecture=MSIL">
+      <HintPath>..\packages\SharpCompress.0.30.1\lib\net461\SharpCompress.dll</HintPath>
+    </Reference>
+    <Reference Include="Snappier, Version=1.0.0.0, Culture=neutral, PublicKeyToken=a1b25124e6e13a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\Snappier.1.0.0\lib\netstandard2.0\Snappier.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.AppContext, Version=4.1.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.AppContext.4.3.0\lib\net463\System.AppContext.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Buffers, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Buffers.4.5.1\lib\net461\System.Buffers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.CodeDom, Version=6.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.CodeDom.6.0.0\lib\net461\System.CodeDom.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ComponentModel.Composition" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Configuration.ConfigurationManager, Version=6.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Configuration.ConfigurationManager.6.0.0\lib\net461\System.Configuration.ConfigurationManager.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Console, Version=4.0.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Console.4.3.0\lib\net46\System.Console.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.Odbc, Version=6.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Data.Odbc.6.0.0\lib\net461\System.Data.Odbc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Data.OleDb, Version=6.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Data.OleDb.6.0.0\lib\net461\System.Data.OleDb.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Data.OracleClient" />
+    <Reference Include="System.Data.SqlClient, Version=4.6.1.3, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Data.SqlClient.4.8.3\lib\net461\System.Data.SqlClient.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Design" />
+    <Reference Include="System.Diagnostics.EventLog, Version=6.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Diagnostics.EventLog.6.0.0\lib\net461\System.Diagnostics.EventLog.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Diagnostics.PerformanceCounter, Version=6.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Diagnostics.PerformanceCounter.6.0.0\lib\net461\System.Diagnostics.PerformanceCounter.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Diagnostics.Tracing, Version=4.1.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Diagnostics.Tracing.4.3.0\lib\net462\System.Diagnostics.Tracing.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.DirectoryServices" />
+    <Reference Include="System.DirectoryServices.AccountManagement" />
+    <Reference Include="System.DirectoryServices.Protocols" />
+    <Reference Include="System.Drawing.Common, Version=6.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Drawing.Common.6.0.0\lib\net461\System.Drawing.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Globalization.Calendars, Version=4.0.2.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Globalization.Calendars.4.3.0\lib\net46\System.Globalization.Calendars.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.IdentityModel" />
+    <Reference Include="System.IO, Version=4.1.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.IO.4.3.0\lib\net462\System.IO.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.IO.Compression, Version=4.1.2.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.IO.Compression.4.3.0\lib\net46\System.IO.Compression.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.IO.Compression.FileSystem" />
+    <Reference Include="System.IO.Compression.ZipFile, Version=4.0.2.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.IO.Compression.ZipFile.4.3.0\lib\net46\System.IO.Compression.ZipFile.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.IO.FileSystem, Version=4.0.2.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.IO.FileSystem.4.3.0\lib\net46\System.IO.FileSystem.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.IO.FileSystem.AccessControl, Version=5.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.IO.FileSystem.AccessControl.5.0.0\lib\net461\System.IO.FileSystem.AccessControl.dll</HintPath>
+    </Reference>
+    <Reference Include="System.IO.FileSystem.Primitives, Version=4.0.2.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.IO.FileSystem.Primitives.4.3.0\lib\net46\System.IO.FileSystem.Primitives.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.IO.Packaging, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.IO.Packaging.6.0.0\lib\net461\System.IO.Packaging.dll</HintPath>
+    </Reference>
+    <Reference Include="System.IO.Pipes.AccessControl, Version=4.0.3.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.IO.Pipes.AccessControl.5.0.0\lib\net461\System.IO.Pipes.AccessControl.dll</HintPath>
+    </Reference>
+    <Reference Include="System.IO.Ports, Version=6.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.IO.Ports.6.0.0\lib\net461\System.IO.Ports.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Linq, Version=4.1.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Linq.4.3.0\lib\net463\System.Linq.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Linq.Expressions, Version=4.1.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Linq.Expressions.4.3.0\lib\net463\System.Linq.Expressions.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Management" />
+    <Reference Include="System.Memory, Version=4.0.1.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Memory.4.5.4\lib\net461\System.Memory.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net" />
+    <Reference Include="System.Net.Http, Version=4.1.1.3, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Net.Http.4.3.4\lib\net46\System.Net.Http.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Net.Sockets, Version=4.1.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Net.Sockets.4.3.0\lib\net46\System.Net.Sockets.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Numerics" />
+    <Reference Include="System.Numerics.Vectors, Version=4.1.4.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Numerics.Vectors.4.5.0\lib\net46\System.Numerics.Vectors.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Reflection, Version=4.1.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Reflection.4.3.0\lib\net462\System.Reflection.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Reflection.Context" />
+    <Reference Include="System.Runtime, Version=4.1.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Runtime.4.3.0\lib\net462\System.Runtime.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Runtime.Caching" />
+    <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Runtime.CompilerServices.Unsafe.6.0.0\lib\net461\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.Extensions, Version=4.1.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Runtime.Extensions.4.3.0\lib\net462\System.Runtime.Extensions.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Runtime.InteropServices, Version=4.1.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Runtime.InteropServices.4.3.0\lib\net463\System.Runtime.InteropServices.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Runtime.InteropServices.RuntimeInformation, Version=4.0.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Runtime.InteropServices.RuntimeInformation.4.3.0\lib\net45\System.Runtime.InteropServices.RuntimeInformation.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Security" />
+    <Reference Include="System.Security.AccessControl, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Security.AccessControl.6.0.0\lib\net461\System.Security.AccessControl.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Security.Cryptography.Algorithms, Version=4.2.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Security.Cryptography.Algorithms.4.3.1\lib\net463\System.Security.Cryptography.Algorithms.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Security.Cryptography.Cng, Version=5.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Security.Cryptography.Cng.5.0.0\lib\net47\System.Security.Cryptography.Cng.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Security.Cryptography.Encoding, Version=4.0.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Security.Cryptography.Encoding.4.3.0\lib\net46\System.Security.Cryptography.Encoding.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Security.Cryptography.Pkcs, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Security.Cryptography.Pkcs.6.0.0\lib\net461\System.Security.Cryptography.Pkcs.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Security.Cryptography.Primitives, Version=4.0.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Security.Cryptography.Primitives.4.3.0\lib\net46\System.Security.Cryptography.Primitives.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Security.Cryptography.ProtectedData, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Security.Cryptography.ProtectedData.6.0.0\lib\net461\System.Security.Cryptography.ProtectedData.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Security.Cryptography.X509Certificates, Version=4.1.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Security.Cryptography.X509Certificates.4.3.0\lib\net461\System.Security.Cryptography.X509Certificates.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Security.Cryptography.Xml, Version=6.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Security.Cryptography.Xml.6.0.0\lib\net461\System.Security.Cryptography.Xml.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Security.Permissions, Version=6.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Security.Permissions.6.0.0\lib\net461\System.Security.Permissions.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Security.Principal.Windows, Version=5.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Security.Principal.Windows.5.0.0\lib\net461\System.Security.Principal.Windows.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.ServiceModel.Duplex, Version=4.9.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.ServiceModel.Duplex.4.9.0\lib\net461\System.ServiceModel.Duplex.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ServiceModel.Http, Version=4.9.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.ServiceModel.Http.4.9.0\lib\net461\System.ServiceModel.Http.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ServiceModel.NetTcp, Version=4.9.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.ServiceModel.NetTcp.4.9.0\lib\net461\System.ServiceModel.NetTcp.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ServiceModel.Primitives, Version=4.9.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.ServiceModel.Primitives.4.9.0\lib\net461\System.ServiceModel.Primitives.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ServiceModel.Security, Version=4.9.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.ServiceModel.Security.4.9.0\lib\net461\System.ServiceModel.Security.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ServiceModel.Syndication, Version=6.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.ServiceModel.Syndication.6.0.0\lib\net461\System.ServiceModel.Syndication.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ServiceProcess" />
+    <Reference Include="System.ServiceProcess.ServiceController, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.ServiceProcess.ServiceController.6.0.0\lib\net461\System.ServiceProcess.ServiceController.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Speech" />
+    <Reference Include="System.Text.Encoding.CodePages, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Text.Encoding.CodePages.6.0.0\lib\net461\System.Text.Encoding.CodePages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Text.Encodings.Web, Version=4.0.3.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Text.Encodings.Web.4.5.1\lib\netstandard2.0\System.Text.Encodings.Web.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Text.RegularExpressions, Version=4.1.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Text.RegularExpressions.4.3.0\lib\net463\System.Text.RegularExpressions.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Threading.AccessControl, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Threading.AccessControl.6.0.0\lib\net461\System.Threading.AccessControl.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Threading.Tasks.Extensions, Version=4.2.0.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Threading.Tasks.Extensions.4.5.4\lib\net461\System.Threading.Tasks.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Transactions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Web.Services.Description, Version=4.9.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Web.Services.Description.4.9.0\lib\net461\System.Web.Services.Description.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Windows.Forms.DataVisualization" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Xml.ReaderWriter, Version=4.1.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Xml.ReaderWriter.4.3.0\lib\net46\System.Xml.ReaderWriter.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="WindowsBase" />
+    <Reference Include="ZstdSharp, Version=0.6.2.0, Culture=neutral, PublicKeyToken=8d151af33a4ad5cf, processorArchitecture=MSIL">
+      <HintPath>..\packages\ZstdSharp.Port.0.6.2\lib\net461\ZstdSharp.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="components\FoodDetail.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="components\FoodDetail.Designer.cs">
+      <DependentUpon>FoodDetail.cs</DependentUpon>
+    </Compile>
+    <Compile Include="components\FoodWidget.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="components\FoodWidget.Designer.cs">
+      <DependentUpon>FoodWidget.cs</DependentUpon>
+    </Compile>
+    <Compile Include="models\Powder.cs" />
+    <Compile Include="models\Food.cs" />
+    <Compile Include="models\InvoiceItem.cs" />
+    <Compile Include="obj\Debug\.NETFramework,Version=v4.7.2.AssemblyAttributes.cs" />
+    <Compile Include="obj\Release\.NETFramework,Version=v4.7.2.AssemblyAttributes.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="views\AccumulatePoints.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="views\AccumulatePoints.Designer.cs">
+      <DependentUpon>AccumulatePoints.cs</DependentUpon>
+    </Compile>
+    <Compile Include="views\dialogs\AddNewDrink.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="views\dialogs\AddNewDrink.Designer.cs">
+      <DependentUpon>AddNewDrink.cs</DependentUpon>
+    </Compile>
+    <Compile Include="views\dialogs\AddNewMember.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="views\dialogs\AddNewMember.Designer.cs">
+      <DependentUpon>AddNewMember.cs</DependentUpon>
+    </Compile>
+    <Compile Include="views\dialogs\AddNewStaff.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="views\dialogs\AddNewStaff.Designer.cs">
+      <DependentUpon>AddNewStaff.cs</DependentUpon>
+    </Compile>
+    <Compile Include="components\DrinkDetail.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="components\.Designer.cs">
+      <DependentUpon>DrinkDetail.cs</DependentUpon>
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="components\DrinkWidget.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="components\DrinkWidget.Designer.cs">
+      <DependentUpon>DrinkWidget.cs</DependentUpon>
+    </Compile>
+    <Compile Include="models\Drink.cs" />
+    <Compile Include="views\dialogs\Card.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="views\dialogs\Card.Designer.cs">
+      <DependentUpon>Card.cs</DependentUpon>
+    </Compile>
+    <Compile Include="views\dialogs\EWallet.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="views\dialogs\EWallet.Designer.cs">
+      <DependentUpon>EWallet.cs</DependentUpon>
+    </Compile>
+    <Compile Include="views\dialogs\CheckPoint.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="views\dialogs\CheckPoint.Designer.cs">
+      <DependentUpon>CheckPoint.cs</DependentUpon>
+    </Compile>
+    <Compile Include="views\dialogs\DrinkOption.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="views\dialogs\DrinkOption.Designer.cs">
+      <DependentUpon>DrinkOption.cs</DependentUpon>
+    </Compile>
+    <Compile Include="models\DrinkSize.cs" />
+    <Compile Include="views\dialogs\Money.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="views\dialogs\Money.Designer.cs">
+      <DependentUpon>Money.cs</DependentUpon>
+    </Compile>
+    <Compile Include="views\dialogs\StatisticalMonth.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="views\dialogs\StatisticalMonth.Designer.cs">
+      <DependentUpon>StatisticalMonth.cs</DependentUpon>
+    </Compile>
+    <Compile Include="views\dialogs\StatisticalWeek.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="views\dialogs\StatisticalWeek.Designer.cs">
+      <DependentUpon>StatisticalWeek.cs</DependentUpon>
+    </Compile>
+    <Compile Include="views\Home.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="views\Home.Designer.cs">
+      <DependentUpon>Home.cs</DependentUpon>
+    </Compile>
+    <Compile Include="views\Login.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="views\Login.Designer.cs">
+      <DependentUpon>Login.cs</DependentUpon>
+    </Compile>
+    <Compile Include="views\ManagerMaterial.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="views\ManagerMaterial.Designer.cs">
+      <DependentUpon>ManagerMaterial.cs</DependentUpon>
+    </Compile>
+    <Compile Include="views\OrderScreen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="views\OrderScreen.Designer.cs">
+      <DependentUpon>OrderScreen.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="views\Payment.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="views\Payment.Designer.cs">
+      <DependentUpon>Payment.cs</DependentUpon>
+    </Compile>
+    <Compile Include="views\QLMenu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="views\QLMenu.Designer.cs">
+      <DependentUpon>QLMenu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="views\QLNV.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="views\QLNV.Designer.cs">
+      <DependentUpon>QLNV.cs</DependentUpon>
+    </Compile>
+    <Compile Include="views\QLTV.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="views\QLTV.Designer.cs">
+      <DependentUpon>QLTV.cs</DependentUpon>
+    </Compile>
+    <Compile Include="models\Member.cs" />
+    <Compile Include="models\Staff.cs" />
+    <Compile Include="views\dialogs\UpdateDrink.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="views\dialogs\UpdateDrink.Designer.cs">
+      <DependentUpon>UpdateDrink.cs</DependentUpon>
+    </Compile>
+    <Compile Include="views\dialogs\UpdateMember.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="views\dialogs\UpdateMember.Designer.cs">
+      <DependentUpon>UpdateMember.cs</DependentUpon>
+    </Compile>
+    <Compile Include="views\dialogs\UpdateStaff.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="views\dialogs\UpdateStaff.Designer.cs">
+      <DependentUpon>UpdateStaff.cs</DependentUpon>
+    </Compile>
+    <Compile Include="views\Statistical.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="views\Statistical.Designer.cs">
+      <DependentUpon>Statistical.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="components\FoodDetail.resx">
+      <DependentUpon>FoodDetail.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="components\FoodWidget.resx">
+      <DependentUpon>FoodWidget.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="obj\Debug\Design_Highlands.AddNewDrink.resources" />
+    <EmbeddedResource Include="obj\Debug\Design_Highlands.AddNewMember.resources" />
+    <EmbeddedResource Include="obj\Debug\Design_Highlands.AddNewStaff.resources" />
+    <EmbeddedResource Include="obj\Debug\Design_Highlands.components.DrinkDetail.resources" />
+    <EmbeddedResource Include="obj\Debug\Design_Highlands.components.DrinkWidget.resources" />
+    <EmbeddedResource Include="obj\Debug\Design_Highlands.components.FoodDetail.resources" />
+    <EmbeddedResource Include="obj\Debug\Design_Highlands.components.FoodWidget.resources" />
+    <EmbeddedResource Include="obj\Debug\Design_Highlands.DrinkOption.resources" />
+    <EmbeddedResource Include="obj\Debug\Design_Highlands.Home.resources" />
+    <EmbeddedResource Include="obj\Debug\Design_Highlands.Login.resources" />
+    <EmbeddedResource Include="obj\Debug\Design_Highlands.OrderScreen.resources" />
+    <EmbeddedResource Include="obj\Debug\Design_Highlands.Properties.Resources.resources" />
+    <EmbeddedResource Include="obj\Debug\Design_Highlands.QLMenu.resources" />
+    <EmbeddedResource Include="obj\Debug\Design_Highlands.QLNV.resources" />
+    <EmbeddedResource Include="obj\Debug\Design_Highlands.QLTV.resources" />
+    <EmbeddedResource Include="obj\Debug\Design_Highlands.UpdateDrink.resources" />
+    <EmbeddedResource Include="obj\Debug\Design_Highlands.UpdateMember.resources" />
+    <EmbeddedResource Include="obj\Debug\Design_Highlands.UpdateStaff.resources" />
+    <EmbeddedResource Include="obj\Debug\Design_Highlands.views.Accumulate_points.resources" />
+    <EmbeddedResource Include="obj\Debug\Design_Highlands.views.dialogs.Card.resources" />
+    <EmbeddedResource Include="obj\Debug\Design_Highlands.views.dialogs.CheckPoint.resources" />
+    <EmbeddedResource Include="obj\Debug\Design_Highlands.views.dialogs.EWallet.resources" />
+    <EmbeddedResource Include="obj\Debug\Design_Highlands.views.dialogs.Money.resources" />
+    <EmbeddedResource Include="obj\Debug\Design_Highlands.views.dialogs.StatisticalMonth.resources" />
+    <EmbeddedResource Include="obj\Debug\Design_Highlands.views.dialogs.StatisticalWeek.resources" />
+    <EmbeddedResource Include="obj\Debug\Design_Highlands.views.ManagerMaterial.resources" />
+    <EmbeddedResource Include="obj\Debug\Design_Highlands.views.Payment.resources" />
+    <EmbeddedResource Include="obj\Debug\Design_Highlands.views.Statistical.resources" />
+    <EmbeddedResource Include="views\AccumulatePoints.resx">
+      <DependentUpon>AccumulatePoints.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="views\dialogs\AddNewDrink.resx">
+      <DependentUpon>AddNewDrink.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="views\dialogs\AddNewMember.resx">
+      <DependentUpon>AddNewMember.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="views\dialogs\AddNewStaff.resx">
+      <DependentUpon>AddNewStaff.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="components\DrinkDetail.resx">
+      <DependentUpon>DrinkDetail.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="components\DrinkWidget.resx">
+      <DependentUpon>DrinkWidget.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="views\dialogs\Card.resx">
+      <DependentUpon>Card.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="views\dialogs\EWallet.resx">
+      <DependentUpon>EWallet.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="views\dialogs\CheckPoint.resx">
+      <DependentUpon>CheckPoint.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="views\dialogs\DrinkOption.resx">
+      <DependentUpon>DrinkOption.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="views\dialogs\Money.resx">
+      <DependentUpon>Money.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="views\dialogs\StatisticalMonth.resx">
+      <DependentUpon>StatisticalMonth.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="views\dialogs\StatisticalWeek.resx">
+      <DependentUpon>StatisticalWeek.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="views\Home.resx">
+      <DependentUpon>Home.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="views\Login.resx">
+      <DependentUpon>Login.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="views\ManagerMaterial.resx">
+      <DependentUpon>ManagerMaterial.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="views\OrderScreen.resx">
+      <DependentUpon>OrderScreen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="views\Payment.resx">
+      <DependentUpon>Payment.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="views\QLMenu.resx">
+      <DependentUpon>QLMenu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="views\QLNV.resx">
+      <DependentUpon>QLNV.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="views\QLTV.resx">
+      <DependentUpon>QLTV.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="views\dialogs\UpdateDrink.resx">
+      <DependentUpon>UpdateDrink.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="views\dialogs\UpdateMember.resx">
+      <DependentUpon>UpdateMember.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="views\dialogs\UpdateStaff.resx">
+      <DependentUpon>UpdateStaff.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="views\Statistical.resx">
+      <DependentUpon>Statistical.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include=".editorconfig" />
+    <None Include="bin\Debug\Design_Highlands.exe.config" />
+    <None Include="libmongocrypt.dylib" />
+    <None Include="libmongocrypt.so" />
+    <None Include="obj\Debug\Costura\038539203A1EAB74E1AFC9097A6F49D74DEAAECD.costura.system.servicemodel.duplex.dll.compressed" />
+    <None Include="obj\Debug\Costura\038539203A1EAB74E1AFC9097A6F49D74DEAAECD.costura.system.servicemodel.duplex.dll.compressed.compressed" />
+    <None Include="obj\Debug\Costura\07ADA536FD6DCB2C153715FA2FC713F50EE5136B.costura.componentfactory.krypton.ribbon.dll.compressed.compressed" />
+    <None Include="obj\Debug\Costura\0EA487E0F4A0FA9F7721D25A320E0ED014D86919.costura.system.io.pipes.accesscontrol.dll.compressed" />
+    <None Include="obj\Debug\Costura\0EA487E0F4A0FA9F7721D25A320E0ED014D86919.costura.system.io.pipes.accesscontrol.dll.compressed.compressed" />
+    <None Include="obj\Debug\Costura\0F423916B55E2693771B6388310AD41509F97D44.costura.bunifu.licensing.pdb.compressed" />
+    <None Include="obj\Debug\Costura\0F423916B55E2693771B6388310AD41509F97D44.costura.bunifu.licensing.pdb.compressed.compressed" />
+    <None Include="obj\Debug\Costura\13C03454586F5ED2AD3340185A5276102967CA1C.costura.system.data.oledb.dll.compressed" />
+    <None Include="obj\Debug\Costura\13C03454586F5ED2AD3340185A5276102967CA1C.costura.system.data.oledb.dll.compressed.compressed" />
+    <None Include="obj\Debug\Costura\180A7BAAFBC820A838BBACA434032D9D33CCEEBE.costura.system.runtime.compilerservices.unsafe.dll.compressed" />
+    <None Include="obj\Debug\Costura\180A7BAAFBC820A838BBACA434032D9D33CCEEBE.costura.system.runtime.compilerservices.unsafe.dll.compressed.compressed" />
+    <None Include="obj\Debug\Costura\18EA7BD41D31247148ABF184527C9368A26F39E7.costura.system.io.filesystem.accesscontrol.dll.compressed" />
+    <None Include="obj\Debug\Costura\18EA7BD41D31247148ABF184527C9368A26F39E7.costura.system.io.filesystem.accesscontrol.dll.compressed.compressed" />
+    <None Include="obj\Debug\Costura\18F65508762D2492F41B22E4E6E5AD19A2226BAA.costura.bunifu.licensing.dll.compressed" />
+    <None Include="obj\Debug\Costura\18F65508762D2492F41B22E4E6E5AD19A2226BAA.costura.bunifu.licensing.dll.compressed.compressed" />
+    <None Include="obj\Debug\Costura\191D79AD78FB961CE162AD342299EDDACACD94CF.costura.microsoft.win32.registry.accesscontrol.dll.compressed" />
+    <None Include="obj\Debug\Costura\191D79AD78FB961CE162AD342299EDDACACD94CF.costura.microsoft.win32.registry.accesscontrol.dll.compressed.compressed" />
+    <None Include="obj\Debug\Costura\19BF79600B716523B5317B9A7B68760AE5D55741.costura.system.memory.dll.compressed" />
+    <None Include="obj\Debug\Costura\19BF79600B716523B5317B9A7B68760AE5D55741.costura.system.memory.dll.compressed.compressed" />
+    <None Include="obj\Debug\Costura\19FEA208570F2CAF9CACFCA044A75218C245E2B6.costura.mongodb.driver.dll.compressed" />
+    <None Include="obj\Debug\Costura\19FEA208570F2CAF9CACFCA044A75218C245E2B6.costura.mongodb.driver.dll.compressed.compressed" />
+    <None Include="obj\Debug\Costura\1BB14967938D99E768AF208FB54668109E81ABBB.costura.costura.dll.compressed" />
+    <None Include="obj\Debug\Costura\2242627282F9E07E37B274EA36FAC2D3CD9C9110.costura.system.threading.tasks.extensions.dll.compressed" />
+    <None Include="obj\Debug\Costura\2242627282F9E07E37B274EA36FAC2D3CD9C9110.costura.system.threading.tasks.extensions.dll.compressed.compressed" />
+    <None Include="obj\Debug\Costura\263EB2667F99FF46A98D92A59EC01DA0D52A805F.costura.componentfactory.krypton.ribbon.pdb.compressed.compressed" />
+    <None Include="obj\Debug\Costura\29C75732AADC4E5C4F096A54E906A68BB9576541.costura.componentfactory.krypton.navigator.dll.compressed.compressed" />
+    <None Include="obj\Debug\Costura\2F2C9D016FFC2BD7078104234E27AB2B010BD765.costura.system.drawing.common.dll.compressed" />
+    <None Include="obj\Debug\Costura\2F2C9D016FFC2BD7078104234E27AB2B010BD765.costura.system.drawing.common.dll.compressed.compressed" />
+    <None Include="obj\Debug\Costura\2F410A0396BC148ED533AD49B6415FB58DD4D641.costura.system.buffers.dll.compressed" />
+    <None Include="obj\Debug\Costura\2F410A0396BC148ED533AD49B6415FB58DD4D641.costura.system.buffers.dll.compressed.compressed" />
+    <None Include="obj\Debug\Costura\31ACE4B26D8A069C84AAD6001E06C2A5483806F3.costura.microsoft.win32.registry.dll.compressed" />
+    <None Include="obj\Debug\Costura\31ACE4B26D8A069C84AAD6001E06C2A5483806F3.costura.microsoft.win32.registry.dll.compressed.compressed" />
+    <None Include="obj\Debug\Costura\3AAC13F00F8A7F55CC06C1F0FB7691B03537B55B.costura.system.servicemodel.nettcp.dll.compressed" />
+    <None Include="obj\Debug\Costura\3AAC13F00F8A7F55CC06C1F0FB7691B03537B55B.costura.system.servicemodel.nettcp.dll.compressed.compressed" />
+    <None Include="obj\Debug\Costura\3CC4E0EEEABE8375D56364AC2FA86F5DB563DA99.costura.componentfactory.krypton.docking.pdb.compressed.compressed" />
+    <None Include="obj\Debug\Costura\3CD7CED8805ED67536E6B7DB5144DB20B822CC38.costura.system.servicemodel.http.pdb.compressed" />
+    <None Include="obj\Debug\Costura\3CD7CED8805ED67536E6B7DB5144DB20B822CC38.costura.system.servicemodel.http.pdb.compressed.compressed" />
+    <None Include="obj\Debug\Costura\3D216458740AD5CB05BC5F7C3491CDE44A1E5DF0.costura.system.numerics.vectors.dll.compressed" />
+    <None Include="obj\Debug\Costura\3D216458740AD5CB05BC5F7C3491CDE44A1E5DF0.costura.system.numerics.vectors.dll.compressed.compressed" />
+    <None Include="obj\Debug\Costura\3D39F1D6A252CFCA0708D79F6AFB2828C957E3ED.costura.cloudinarydotnet.dll.compressed" />
+    <None Include="obj\Debug\Costura\3D39F1D6A252CFCA0708D79F6AFB2828C957E3ED.costura.cloudinarydotnet.dll.compressed.compressed" />
+    <None Include="obj\Debug\Costura\43FEA10A62670568C00A2910C3EE6FC1CEAA1BDC.costura.componentfactory.krypton.toolkit.dll.compressed" />
+    <None Include="obj\Debug\Costura\43FEA10A62670568C00A2910C3EE6FC1CEAA1BDC.costura.componentfactory.krypton.toolkit.dll.compressed.compressed" />
+    <None Include="obj\Debug\Costura\4D131D1AF5DE8A09FC857772D5791E18939E7CAD.costura.system.servicemodel.http.dll.compressed" />
+    <None Include="obj\Debug\Costura\4D131D1AF5DE8A09FC857772D5791E18939E7CAD.costura.system.servicemodel.http.dll.compressed.compressed" />
+    <None Include="obj\Debug\Costura\54EC870FFB8CE10B3C8B05BBC7FB7EA45142A430.costura.restsharp.dll.compressed" />
+    <None Include="obj\Debug\Costura\54EC870FFB8CE10B3C8B05BBC7FB7EA45142A430.costura.restsharp.dll.compressed.compressed" />
+    <None Include="obj\Debug\Costura\56A9362A4FC59030DAFF76BC2210A89086132BF0.costura.bunifu.ui.winforms.bunifuslider.dll.compressed" />
+    <None Include="obj\Debug\Costura\5B721C140591E0ADC68963C49A0EE72B0C27EFEF.costura.system.threading.accesscontrol.dll.compressed" />
+    <None Include="obj\Debug\Costura\5B721C140591E0ADC68963C49A0EE72B0C27EFEF.costura.system.threading.accesscontrol.dll.compressed.compressed" />
+    <None Include="obj\Debug\Costura\5DBF1534FFBFF016CC45559EB5EFF3DC4252A522.costura.microsoft.bcl.asyncinterfaces.dll.compressed" />
+    <None Include="obj\Debug\Costura\5DBF1534FFBFF016CC45559EB5EFF3DC4252A522.costura.microsoft.bcl.asyncinterfaces.dll.compressed.compressed" />
+    <None Include="obj\Debug\Costura\603E32E8B76D82B70E26753294B56EB708E8C2FB.costura.mongodb.driver.core.dll.compressed" />
+    <None Include="obj\Debug\Costura\603E32E8B76D82B70E26753294B56EB708E8C2FB.costura.mongodb.driver.core.dll.compressed.compressed" />
+    <None Include="obj\Debug\Costura\68AE50EC9E5E6D50EF06593E2B70CCCFCAFB2017.costura.system.security.cryptography.pkcs.dll.compressed" />
+    <None Include="obj\Debug\Costura\68AE50EC9E5E6D50EF06593E2B70CCCFCAFB2017.costura.system.security.cryptography.pkcs.dll.compressed.compressed" />
+    <None Include="obj\Debug\Costura\68B26C09222CA486C20B922F3D3AD91CA888DD25.costura.mongodb.libmongocrypt.dll.compressed" />
+    <None Include="obj\Debug\Costura\68B26C09222CA486C20B922F3D3AD91CA888DD25.costura.mongodb.libmongocrypt.dll.compressed.compressed" />
+    <None Include="obj\Debug\Costura\6A511A5688B188C4D1615CEDE33B1E5278376001.costura.system.configuration.configurationmanager.dll.compressed" />
+    <None Include="obj\Debug\Costura\6A511A5688B188C4D1615CEDE33B1E5278376001.costura.system.configuration.configurationmanager.dll.compressed.compressed" />
+    <None Include="obj\Debug\Costura\6C6000A5EAF8579850AB82A89BD6268776EB51AD.costura.costura.pdb.compressed.compressed" />
+    <None Include="obj\Debug\Costura\6EC89E1CE27C3EE10530D83236D7B1C560CF4E48.costura.bunifu.ui.winforms.bunifudatagridview.dll.compressed" />
+    <None Include="obj\Debug\Costura\71FD4EFD194C24CEEA5A14749EEB6C0F63E75650.costura.componentfactory.krypton.workspace.dll.compressed.compressed" />
+    <None Include="obj\Debug\Costura\73D1557D00F91CC239F13B27EB385D314CA40511.costura.system.io.ports.dll.compressed" />
+    <None Include="obj\Debug\Costura\73D1557D00F91CC239F13B27EB385D314CA40511.costura.system.io.ports.dll.compressed.compressed" />
+    <None Include="obj\Debug\Costura\7490C66757ACE1971272087DD6737A7D272A06BA.costura.system.servicemodel.syndication.dll.compressed" />
+    <None Include="obj\Debug\Costura\7490C66757ACE1971272087DD6737A7D272A06BA.costura.system.servicemodel.syndication.dll.compressed.compressed" />
+    <None Include="obj\Debug\Costura\7889B3830E815C1EC2CA9B3BC40FBE115B6B9CFE.costura.system.web.services.description.dll.compressed" />
+    <None Include="obj\Debug\Costura\7889B3830E815C1EC2CA9B3BC40FBE115B6B9CFE.costura.system.web.services.description.dll.compressed.compressed" />
+    <None Include="obj\Debug\Costura\7ADB84B667BBC630CD077280BD9D5C03E04C856C.costura.system.servicemodel.nettcp.pdb.compressed" />
+    <None Include="obj\Debug\Costura\7ADB84B667BBC630CD077280BD9D5C03E04C856C.costura.system.servicemodel.nettcp.pdb.compressed.compressed" />
+    <None Include="obj\Debug\Costura\7D0AD03FBDA1C24F883116B940717E596073AE96.costura.newtonsoft.json.dll.compressed" />
+    <None Include="obj\Debug\Costura\7D0AD03FBDA1C24F883116B940717E596073AE96.costura.newtonsoft.json.dll.compressed.compressed" />
+    <None Include="obj\Debug\Costura\83014E2A98F7597B9A26E424A0759E5A3D2ECFF1.costura.system.security.accesscontrol.dll.compressed" />
+    <None Include="obj\Debug\Costura\83014E2A98F7597B9A26E424A0759E5A3D2ECFF1.costura.system.security.accesscontrol.dll.compressed.compressed" />
+    <None Include="obj\Debug\Costura\86312CBA2EB3495CC6BEC66D54D4AB88596275D8.costura.bunifu.ui.winforms.1.5.3.dll.compressed" />
+    <None Include="obj\Debug\Costura\86312CBA2EB3495CC6BEC66D54D4AB88596275D8.costura.bunifu.ui.winforms.1.5.3.dll.compressed.compressed" />
+    <None Include="obj\Debug\Costura\88C8065034EE0E4B9F6A3935FD32E541EFF39EBC.costura.system.codedom.dll.compressed" />
+    <None Include="obj\Debug\Costura\88C8065034EE0E4B9F6A3935FD32E541EFF39EBC.costura.system.codedom.dll.compressed.compressed" />
+    <None Include="obj\Debug\Costura\8E83C5A162EEC525281C870B3D7FC2F197A70FAF.costura.system.servicemodel.primitives.pdb.compressed" />
+    <None Include="obj\Debug\Costura\8E83C5A162EEC525281C870B3D7FC2F197A70FAF.costura.system.servicemodel.primitives.pdb.compressed.compressed" />
+    <None Include="obj\Debug\Costura\921A1F530DFFC5D131C1AA46ED00C77F525A7DD8.costura.mongodb.bson.dll.compressed" />
+    <None Include="obj\Debug\Costura\921A1F530DFFC5D131C1AA46ED00C77F525A7DD8.costura.mongodb.bson.dll.compressed.compressed" />
+    <None Include="obj\Debug\Costura\9825171E68F1B6016182F86E927109462642F21E.costura.zstdsharp.dll.compressed" />
+    <None Include="obj\Debug\Costura\9825171E68F1B6016182F86E927109462642F21E.costura.zstdsharp.dll.compressed.compressed" />
+    <None Include="obj\Debug\Costura\9A5BE1FCF410FE5934D720329D36A2377E83747E.costura.system.security.principal.windows.dll.compressed" />
+    <None Include="obj\Debug\Costura\9A5BE1FCF410FE5934D720329D36A2377E83747E.costura.system.security.principal.windows.dll.compressed.compressed" />
+    <None Include="obj\Debug\Costura\9BDDAAB55A1FF8564DD64FC32A746CA6AD234450.costura.system.servicemodel.security.dll.compressed" />
+    <None Include="obj\Debug\Costura\9BDDAAB55A1FF8564DD64FC32A746CA6AD234450.costura.system.servicemodel.security.dll.compressed.compressed" />
+    <None Include="obj\Debug\Costura\9CB018B5EAE1CC55D9CA227C2B63267ABE7E7DF3.costura.snappier.dll.compressed" />
+    <None Include="obj\Debug\Costura\9CB018B5EAE1CC55D9CA227C2B63267ABE7E7DF3.costura.snappier.dll.compressed.compressed" />
+    <None Include="obj\Debug\Costura\A027BE116049B789BF6451C03FA6A53B7C8C3BAD.costura.system.serviceprocess.servicecontroller.dll.compressed" />
+    <None Include="obj\Debug\Costura\A027BE116049B789BF6451C03FA6A53B7C8C3BAD.costura.system.serviceprocess.servicecontroller.dll.compressed.compressed" />
+    <None Include="obj\Debug\Costura\A1665AC54E4894CE58077A5251568B6BE4B348E8.costura.componentfactory.krypton.docking.dll.compressed.compressed" />
+    <None Include="obj\Debug\Costura\AA51365214BDDA562D340DDDD5FFCF0C09A11338.costura.awssdk.core.dll.compressed" />
+    <None Include="obj\Debug\Costura\AA51365214BDDA562D340DDDD5FFCF0C09A11338.costura.awssdk.core.dll.compressed.compressed" />
+    <None Include="obj\Debug\Costura\AF9F8B6A5ECC37CB4E2EECDFC97DBB5FB293C1CF.costura.awssdk.core.pdb.compressed" />
+    <None Include="obj\Debug\Costura\AF9F8B6A5ECC37CB4E2EECDFC97DBB5FB293C1CF.costura.awssdk.core.pdb.compressed.compressed" />
+    <None Include="obj\Debug\Costura\B27F1AA60EBB0B23C33961E5120848EF69492DD8.costura.awssdk.securitytoken.pdb.compressed" />
+    <None Include="obj\Debug\Costura\B27F1AA60EBB0B23C33961E5120848EF69492DD8.costura.awssdk.securitytoken.pdb.compressed.compressed" />
+    <None Include="obj\Debug\Costura\B382B80CA629393DA72379C2EC0149E7639D498D.costura.system.security.permissions.dll.compressed" />
+    <None Include="obj\Debug\Costura\B382B80CA629393DA72379C2EC0149E7639D498D.costura.system.security.permissions.dll.compressed.compressed" />
+    <None Include="obj\Debug\Costura\B5F3B8153DEB32F540C785C030F190DAF7C0F3F3.costura.system.diagnostics.eventlog.dll.compressed" />
+    <None Include="obj\Debug\Costura\B5F3B8153DEB32F540C785C030F190DAF7C0F3F3.costura.system.diagnostics.eventlog.dll.compressed.compressed" />
+    <None Include="obj\Debug\Costura\B6A5EBF42211FDABCF377EC2018B6B9A14A99761.costura.system.text.encoding.codepages.dll.compressed" />
+    <None Include="obj\Debug\Costura\B6A5EBF42211FDABCF377EC2018B6B9A14A99761.costura.system.text.encoding.codepages.dll.compressed.compressed" />
+    <None Include="obj\Debug\Costura\BA05496905A77631F274B016D6F04875A3C165B3.costura.bunifu.ui.winforms.dll.compressed" />
+    <None Include="obj\Debug\Costura\BA05496905A77631F274B016D6F04875A3C165B3.costura.bunifu.ui.winforms.dll.compressed.compressed" />
+    <None Include="obj\Debug\Costura\BA181221ADD6B9E0C0A72E96C3F5A6A852C6920F.costura.microsoft.extensions.logging.abstractions.dll.compressed" />
+    <None Include="obj\Debug\Costura\BA181221ADD6B9E0C0A72E96C3F5A6A852C6920F.costura.microsoft.extensions.logging.abstractions.dll.compressed.compressed" />
+    <None Include="obj\Debug\Costura\C0EAAA892B3AF3133C0DC0D20D96055817442260.costura.componentfactory.krypton.toolkit.pdb.compressed" />
+    <None Include="obj\Debug\Costura\C0EAAA892B3AF3133C0DC0D20D96055817442260.costura.componentfactory.krypton.toolkit.pdb.compressed.compressed" />
+    <None Include="obj\Debug\Costura\C57659CDC8B66AF4B6D3B7F0E44028F265207FD2.costura.system.data.odbc.dll.compressed" />
+    <None Include="obj\Debug\Costura\C57659CDC8B66AF4B6D3B7F0E44028F265207FD2.costura.system.data.odbc.dll.compressed.compressed" />
+    <None Include="obj\Debug\Costura\C88F990C00C6C35D36CD3D7ED4AC6072A5D9CCA6.costura.componentfactory.krypton.navigator.pdb.compressed.compressed" />
+    <None Include="obj\Debug\Costura\C96D0313C788BD447C3EC1145A49E5BEAE200E33.costura.system.security.cryptography.xml.dll.compressed" />
+    <None Include="obj\Debug\Costura\C96D0313C788BD447C3EC1145A49E5BEAE200E33.costura.system.security.cryptography.xml.dll.compressed.compressed" />
+    <None Include="obj\Debug\Costura\CBC510520FCD85DBC1C82B02E82040702ACA9B79.costura.newtonsoft.json.dll.compressed" />
+    <None Include="obj\Debug\Costura\CC327CDCC67762BA55AE0F01747F3B82F58F1700.costura.sharpcompress.dll.compressed" />
+    <None Include="obj\Debug\Costura\CC327CDCC67762BA55AE0F01747F3B82F58F1700.costura.sharpcompress.dll.compressed.compressed" />
+    <None Include="obj\Debug\Costura\D00C8BE9945B6FBD22929DD0E666799CF0670673.costura.system.data.sqlclient.dll.compressed" />
+    <None Include="obj\Debug\Costura\D00C8BE9945B6FBD22929DD0E666799CF0670673.costura.system.data.sqlclient.dll.compressed.compressed" />
+    <None Include="obj\Debug\Costura\D49BB2169407750EC5F93F02AE9AA7B483813633.costura.awssdk.securitytoken.dll.compressed" />
+    <None Include="obj\Debug\Costura\D49BB2169407750EC5F93F02AE9AA7B483813633.costura.awssdk.securitytoken.dll.compressed.compressed" />
+    <None Include="obj\Debug\Costura\DB3618ED05B40478E26949650E4439616A8C5161.costura.system.web.services.description.pdb.compressed" />
+    <None Include="obj\Debug\Costura\DB3618ED05B40478E26949650E4439616A8C5161.costura.system.web.services.description.pdb.compressed.compressed" />
+    <None Include="obj\Debug\Costura\DBF32FF9AEC55424E138BFA21A874E68AD19A66C.costura.dnsclient.dll.compressed" />
+    <None Include="obj\Debug\Costura\DBF32FF9AEC55424E138BFA21A874E68AD19A66C.costura.dnsclient.dll.compressed.compressed" />
+    <None Include="obj\Debug\Costura\DC97569E1CE6E799307290C1A70061CB1AA3BBDD.costura.microsoft.win32.systemevents.dll.compressed" />
+    <None Include="obj\Debug\Costura\DC97569E1CE6E799307290C1A70061CB1AA3BBDD.costura.microsoft.win32.systemevents.dll.compressed.compressed" />
+    <None Include="obj\Debug\Costura\E47E323D44743A5104620A9E0B0264693A64ED92.costura.system.security.cryptography.cng.dll.compressed" />
+    <None Include="obj\Debug\Costura\E47E323D44743A5104620A9E0B0264693A64ED92.costura.system.security.cryptography.cng.dll.compressed.compressed" />
+    <None Include="obj\Debug\Costura\ECFE9CA1AD79826D2272A531CB185D980ED0E700.costura.system.diagnostics.performancecounter.dll.compressed" />
+    <None Include="obj\Debug\Costura\ECFE9CA1AD79826D2272A531CB185D980ED0E700.costura.system.diagnostics.performancecounter.dll.compressed.compressed" />
+    <None Include="obj\Debug\Costura\EF600AC2BC485766D0577FEEF1A3AB281A0E5E74.costura.system.servicemodel.primitives.dll.compressed" />
+    <None Include="obj\Debug\Costura\EF600AC2BC485766D0577FEEF1A3AB281A0E5E74.costura.system.servicemodel.primitives.dll.compressed.compressed" />
+    <None Include="obj\Debug\Costura\EF795925B5FF7A408FDA1913F9B4D0B065DA9291.costura.system.servicemodel.duplex.pdb.compressed" />
+    <None Include="obj\Debug\Costura\EF795925B5FF7A408FDA1913F9B4D0B065DA9291.costura.system.servicemodel.duplex.pdb.compressed.compressed" />
+    <None Include="obj\Debug\Costura\F1F25C01F6ACF33BDD62C4F82D3EF078E76F0906.costura.costura.dll.compressed.compressed" />
+    <None Include="obj\Debug\Costura\F72C33618436AE72CDF1ACA63F6D84CF65250406.costura.componentfactory.krypton.workspace.pdb.compressed.compressed" />
+    <None Include="obj\Debug\Costura\F788F0B87276B5EF87721813990E905E3344A8B1.costura.system.io.packaging.dll.compressed" />
+    <None Include="obj\Debug\Costura\F788F0B87276B5EF87721813990E905E3344A8B1.costura.system.io.packaging.dll.compressed.compressed" />
+    <None Include="obj\Debug\Costura\FB0BD4CEEE48A80C768B8F285984094DA47A2361.costura.system.text.encodings.web.dll.compressed" />
+    <None Include="obj\Debug\Costura\FB0BD4CEEE48A80C768B8F285984094DA47A2361.costura.system.text.encodings.web.dll.compressed.compressed" />
+    <None Include="obj\Debug\Costura\FE75C14F17C7B308D6AE149CA2AA602204AA1726.costura.system.servicemodel.security.pdb.compressed" />
+    <None Include="obj\Debug\Costura\FE75C14F17C7B308D6AE149CA2AA602204AA1726.costura.system.servicemodel.security.pdb.compressed.compressed" />
+    <None Include="obj\Debug\Costura\FF6F8C28A314B0E878DC3EA10A605A1B06562FC7.costura.system.security.cryptography.protecteddata.dll.compressed" />
+    <None Include="obj\Debug\Costura\FF6F8C28A314B0E878DC3EA10A605A1B06562FC7.costura.system.security.cryptography.protecteddata.dll.compressed.compressed" />
+    <None Include="obj\Debug\DesignTimeResolveAssemblyReferences.cache" />
+    <None Include="obj\Debug\DesignTimeResolveAssemblyReferencesInput.cache" />
+    <None Include="obj\Debug\Design_Highlands.csproj.AssemblyReference.cache" />
+    <None Include="obj\Debug\Design_Highlands.csproj.CopyComplete" />
+    <None Include="obj\Debug\Design_Highlands.csproj.CoreCompileInputs.cache" />
+    <None Include="obj\Debug\Design_Highlands.csproj.Fody.CopyLocal.cache" />
+    <None Include="obj\Debug\Design_Highlands.csproj.GenerateResource.cache" />
+    <None Include="obj\Debug\Design_Highlands.csproj.SuggestedBindingRedirects.cache" />
+    <None Include="obj\Debug\_IsIncrementalBuild" />
+    <None Include="obj\Release\Design_Highlands.csproj.AssemblyReference.cache" />
+    <None Include="packages.config" />
+    <None Include="Properties\app.manifest" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Analyzer Include="..\packages\AWSSDK.SecurityToken.3.7.100.14\analyzers\dotnet\cs\AWSSDK.SecurityToken.CodeAnalysis.dll" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="bin\Debug\AWSSDK.Core.xml" />
+    <Content Include="bin\Debug\AWSSDK.SecurityToken.xml" />
+    <Content Include="bin\Debug\Bunifu.UI.WinForms.1.5.3.xml" />
+    <Content Include="bin\Debug\Bunifu.UI.WinForms.xml" />
+    <Content Include="bin\Debug\CloudinaryDotNet.xml" />
+    <Content Include="bin\Debug\Design_Highlands.exe" />
+    <Content Include="bin\Debug\Design_Highlands.pdb" />
+    <Content Include="bin\Debug\DnsClient.xml" />
+    <Content Include="bin\Debug\Microsoft.Bcl.AsyncInterfaces.xml" />
+    <Content Include="bin\Debug\Microsoft.Extensions.Logging.Abstractions.xml" />
+    <Content Include="bin\Debug\Microsoft.Win32.Registry.AccessControl.xml" />
+    <Content Include="bin\Debug\Microsoft.Win32.Registry.xml" />
+    <Content Include="bin\Debug\Microsoft.Win32.SystemEvents.xml" />
+    <Content Include="bin\Debug\mongocrypt.dll" />
+    <Content Include="bin\Debug\MongoDB.Bson.xml" />
+    <Content Include="bin\Debug\MongoDB.Driver.Core.xml" />
+    <Content Include="bin\Debug\MongoDB.Driver.xml" />
+    <Content Include="bin\Debug\Newtonsoft.Json.xml" />
+    <Content Include="bin\Debug\RestSharp.xml" />
+    <Content Include="bin\Debug\Snappier.xml" />
+    <Content Include="bin\Debug\System.Buffers.xml" />
+    <Content Include="bin\Debug\System.CodeDom.xml" />
+    <Content Include="bin\Debug\System.Configuration.ConfigurationManager.xml" />
+    <Content Include="bin\Debug\System.Data.Odbc.xml" />
+    <Content Include="bin\Debug\System.Data.OleDb.xml" />
+    <Content Include="bin\Debug\System.Data.SqlClient.xml" />
+    <Content Include="bin\Debug\System.Diagnostics.EventLog.xml" />
+    <Content Include="bin\Debug\System.Diagnostics.PerformanceCounter.xml" />
+    <Content Include="bin\Debug\System.Drawing.Common.xml" />
+    <Content Include="bin\Debug\System.IO.FileSystem.AccessControl.xml" />
+    <Content Include="bin\Debug\System.IO.Packaging.xml" />
+    <Content Include="bin\Debug\System.IO.Ports.xml" />
+    <Content Include="bin\Debug\System.Memory.xml" />
+    <Content Include="bin\Debug\System.Numerics.Vectors.xml" />
+    <Content Include="bin\Debug\System.Runtime.CompilerServices.Unsafe.xml" />
+    <Content Include="bin\Debug\System.Security.AccessControl.xml" />
+    <Content Include="bin\Debug\System.Security.Cryptography.Cng.xml" />
+    <Content Include="bin\Debug\System.Security.Cryptography.Pkcs.xml" />
+    <Content Include="bin\Debug\System.Security.Cryptography.ProtectedData.xml" />
+    <Content Include="bin\Debug\System.Security.Cryptography.Xml.xml" />
+    <Content Include="bin\Debug\System.Security.Permissions.xml" />
+    <Content Include="bin\Debug\System.Security.Principal.Windows.xml" />
+    <Content Include="bin\Debug\System.ServiceModel.Syndication.xml" />
+    <Content Include="bin\Debug\System.ServiceProcess.ServiceController.xml" />
+    <Content Include="bin\Debug\System.Text.Encoding.CodePages.xml" />
+    <Content Include="bin\Debug\System.Text.Encodings.Web.xml" />
+    <Content Include="bin\Debug\System.Threading.AccessControl.xml" />
+    <Content Include="bin\Debug\System.Threading.Tasks.Extensions.xml" />
+    <Content Include="mongocrypt.dll" />
+    <Content Include="obj\Debug\Design_Highlands.csproj.FileListAbsolute.txt" />
+    <Content Include="obj\Debug\Design_Highlands.exe" />
+    <Content Include="obj\Debug\Design_Highlands.pdb" />
+    <Content Include="obj\Debug\TempPE\Properties.Resources.Designer.cs.dll" />
+    <None Include="Resources\settings1.png" />
+    <None Include="Resources\settings.png" />
+    <None Include="Resources\thức uông.png" />
+    <None Include="Resources\different1.png" />
+    <None Include="Resources\week2.png" />
+    <None Include="Resources\month2.png" />
+    <None Include="Resources\money2.png" />
+    <None Include="Resources\momo2.png" />
+    <None Include="Resources\creditcard.png" />
+    <None Include="Resources\Chicken and Cheese.png" />
+    <None Include="Resources\Chicken &amp; Cheese.png" />
+    <None Include="Resources\Pate.jpg" />
+    <None Include="Resources\Pate.png" />
+    <None Include="Resources\Tiramisu Cake2.jpg" />
+    <None Include="Resources\Peach Mousse2.png" />
+    <None Include="Resources\Passion Fruit Cheese Cake2.jpg" />
+    <None Include="Resources\Green Tea Cheese Cake2.jpg" />
+    <None Include="Resources\Coffee Cheese Cake2.jpg" />
+    <None Include="Resources\Cocoa Mousse2.png" />
+    <None Include="Resources\Chocolate Highlands Cake2.png" />
+    <None Include="Resources\Caramel Cheese Cake2.jpg" />
+    <None Include="Resources\Banana Cake2.jpg" />
+    <None Include="Resources\thongke2.png" />
+    <None Include="Resources\thongke.png" />
+    <None Include="Resources\customer.png" />
+    <None Include="Resources\employee.png" />
+    <None Include="Resources\ask.png" />
+    <None Include="Resources\Image1.bmp" />
+    <None Include="Resources\Tiramisu Cake1.jpg" />
+    <None Include="Resources\Peach Mousse1.png" />
+    <None Include="Resources\Passion Fruit Cheese Cake1.jpg" />
+    <None Include="Resources\Green Tea Cheese Cake1.jpg" />
+    <None Include="Resources\Coffee Cheese Cake1.jpg" />
+    <None Include="Resources\Cocoa Mousse1.png" />
+    <None Include="Resources\Chocolate Highlands Cake1.png" />
+    <None Include="Resources\Caramel Cheese Cake1.jpg" />
+    <None Include="Resources\Banana Cake1.jpg" />
+    <None Include="Resources\Yellow Lotus Tea.png" />
+    <None Include="Resources\Tea with Peach Jelly.jpg" />
+    <None Include="Resources\Tea with Lychee Jelly.jpg" />
+    <None Include="Resources\Tea with Lotus Seeds.jpg" />
+    <None Include="Resources\Pink Guava Tea.png" />
+    <None Include="Resources\Peach Tea with Lemongrass.jpg" />
+    <None Include="Resources\Mocha.jpg" />
+    <None Include="Resources\Mango Tea.jpg" />
+    <None Include="Resources\latte.jpg" />
+    <None Include="Resources\Iced White PHIN Coffee &amp; Condensed Milk.jpg" />
+    <None Include="Resources\Iced Coffee with Condensed Milk.jpg" />
+    <None Include="Resources\Iced Black Coffee.jpg" />
+    <None Include="Resources\Ice Coffee with Milk Foam.jpg" />
+    <None Include="Resources\Ice Coffee with Chocolate.jpg" />
+    <None Include="Resources\Ice Coffee with Almond &amp; Fresh Milk.jpg" />
+    <None Include="Resources\Green Tea with Red Bean.jpg" />
+    <None Include="Resources\Green Tea Freeze.png" />
+    <None Include="Resources\Expresso.jpg" />
+    <None Include="Resources\Cookie &amp; Cream.jpg" />
+    <None Include="Resources\Classic Phin Freeze.jpg" />
+    <None Include="Resources\Chocolate Freeze.jpg" />
+    <None Include="Resources\Cherry Apricot Tea.jpg" />
+    <None Include="Resources\Caramel Phin Freeze.jpg" />
+    <None Include="Resources\Caramel Macchiato.jpg" />
+    <None Include="Resources\Cappuccino.jpg" />
+    <None Include="Resources\americano-nongjpg.jpg" />
+    <None Include="Resources\customer2.png" />
+    <None Include="Resources\week1.png" />
+    <None Include="Resources\voucher1.png" />
+    <None Include="Resources\thongke1.png" />
+    <None Include="Resources\month1.png" />
+    <None Include="Resources\money1.png" />
+    <None Include="Resources\momo1.png" />
+    <None Include="Resources\employee1.png" />
+    <None Include="Resources\drink1.png" />
+    <None Include="Resources\customer1.png" />
+    <None Include="Resources\creditcard1.png" />
+    <None Include="Resources\ask1.png" />
+    <None Include="Resources\all1.png" />
+    <None Include="Resources\topping.png" />
+    <None Include="Resources\qrcode_58910638_c883572035559c715d1a2bf9c9714b1a.png" />
+    <None Include="Resources\ql menu.png" />
+    <None Include="Resources\ql kho.png" />
+    <None Include="Resources\order.png" />
+    <None Include="Resources\logoTeam.png" />
+    <None Include="Resources\logo.png" />
+    <None Include="Resources\food.png" />
+    <None Include="Resources\different.png" />
+    <None Include="Resources\cafe.png" />
+    <None Include="Resources\backgroundbtn.png" />
+    <None Include="Resources\background.png" />
+    <None Include="Resources\back.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.7.2">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.7.2 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="..\packages\MongoDB.Libmongocrypt.1.7.0\build\MongoDB.Libmongocrypt.targets" Condition="Exists('..\packages\MongoDB.Libmongocrypt.1.7.0\build\MongoDB.Libmongocrypt.targets')" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\MongoDB.Libmongocrypt.1.7.0\build\MongoDB.Libmongocrypt.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\MongoDB.Libmongocrypt.1.7.0\build\MongoDB.Libmongocrypt.targets'))" />
+    <Error Condition="!Exists('..\packages\Fody.6.5.5\build\Fody.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Fody.6.5.5\build\Fody.targets'))" />
+    <Error Condition="!Exists('..\packages\Costura.Fody.5.7.0\build\Costura.Fody.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Costura.Fody.5.7.0\build\Costura.Fody.props'))" />
+    <Error Condition="!Exists('..\packages\Costura.Fody.5.7.0\build\Costura.Fody.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Costura.Fody.5.7.0\build\Costura.Fody.targets'))" />
+  </Target>
+  <Import Project="..\packages\Fody.6.5.5\build\Fody.targets" Condition="Exists('..\packages\Fody.6.5.5\build\Fody.targets')" />
+  <Import Project="..\packages\Costura.Fody.5.7.0\build\Costura.Fody.targets" Condition="Exists('..\packages\Costura.Fody.5.7.0\build\Costura.Fody.targets')" />
+</Project>
